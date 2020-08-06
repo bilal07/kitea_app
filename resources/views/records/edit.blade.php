@@ -41,12 +41,12 @@
 
                                  <select class="form-control select2 @error('record_cat') is-invalid @enderror"
                                  data-placeholder="" name="record_cat" id="record_cat">
-                                        <option value="{{ $cat_value }}">{{ $cat->name }}</option>
+                                        <option value="{{ $cat_value }}">{{ $cat->name_category }}</option>
                                         @foreach ($top_cats as $top_cat)
-                                            <option value="{{ $top_cat->id }}"  style="background-color:grey">{{ $top_cat->name }}</option>
+                                            <option value="{{ $top_cat->id }}"  style="background-color:grey">{{ $top_cat->name_category }}</option>
                                                 @foreach ($sub_cats as $sub_cat)
                                                     @if ( $sub_cat->parent_category === $top_cat->id )
-                                                        <option value="{{ $sub_cat->id }}|{{ $top_cat->id }}">{{ $sub_cat->name }}</option>
+                                                        <option value="{{ $sub_cat->id }}|{{ $top_cat->id }}">{{ $sub_cat->name_category }}</option>
                                                     @endif
                                                 @endforeach
                                         @endforeach    

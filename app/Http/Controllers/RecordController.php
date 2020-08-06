@@ -43,13 +43,15 @@ class RecordController extends Controller
             $records->record_category = $result_explode[0];
             $records->parent_category = $result_explode[1];
             $cat  = Categories::find($result_explode[1]);
-            $records->cat_name = $cat->name;
+            $records->cat_name = $cat->name_category;
+            $records->is_recycled = 0;
         }
         else {
             $records->record_category = $result;
             $records->parent_category = null;
             $cat  = Categories::find($result);
-            $records->cat_name = $cat->name;
+            $records->cat_name = $cat->name_category;
+            $records->is_recycled = 0;
         }
         
 
